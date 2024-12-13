@@ -1,15 +1,36 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localfont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+const neueMontreal = localfont({
+  src: [
+    {
+      path: "../public/fonts/NeueMontreal-Bold.otf",
+      weight: "700",
+      style: "bold",
+    },
+    {
+      path: "../public/fonts/NeueMontreal-BoldItalic.otf",
+      weight: "500",
+      style: "boldItalic",
+    },
+    {
+      path: "../public/fonts/NeueMontreal-Regular.otf",
+      weight: "400",
+      style: "regular",
+    },
+    {
+      path: "../public/fonts/NeueMontreal-Regular.otf",
+      weight: "400",
+      style: "regular",
+    },
+    {
+      path: "../public/fonts/NeueMontreal-Italic.otf",
+      weight: "400",
+      style: "italic",
+    },
+  ],
+  variable: "--font-neueMontreal",
 });
 
 export const metadata: Metadata = {
@@ -24,11 +45,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
+      <body className={`${neueMontreal.variable} antialiased`}>{children}</body>
     </html>
   );
 }

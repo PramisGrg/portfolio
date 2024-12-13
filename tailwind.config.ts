@@ -13,6 +13,9 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    fontFamily: {
+      neueMontreal: ["var(--font-neueMontreal)"],
+    },
   },
   plugins: [],
 } satisfies Config;
