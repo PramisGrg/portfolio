@@ -2,6 +2,8 @@
 import { useEffect, useState } from "react";
 import Preloader from "./components/preloader";
 import { AnimatePresence } from "framer-motion";
+import HeroSection from "./components/hero-section/page";
+import Project from "./components/project/page";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -18,10 +20,10 @@ export default function Home() {
         {isLoading ? (
           <Preloader key="preloader" />
         ) : (
-          <main key="main-content">
-            <h1 className="">My name is Pramis</h1>
-            <h2 className="text-xl">I am a Software Engineer</h2>
-          </main>
+          <>
+            <HeroSection />
+            <Project />
+          </>
         )}
       </AnimatePresence>
     </div>
