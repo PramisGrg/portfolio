@@ -1,6 +1,6 @@
 import type { Config } from "tailwindcss";
-import tailwindAnimate from "tailwindcss-animate";
-import { flattenColorPalette } from "tailwindcss/lib/util/flattenColorPalette";
+// import tailwindAnimate from "tailwindcss-animate";
+import flattenColorPalette from "tailwindcss/lib/util/flattenColorPalette.js";
 
 export default {
   darkMode: ["class"],
@@ -76,7 +76,7 @@ export default {
       neueMontreal: ["var(--font-neueMontreal)"],
     },
   },
-  plugins: [tailwindAnimate, addVariablesForColors],
+  plugins: [addVariablesForColors],
 } satisfies Config;
 
 function addVariablesForColors({ addBase, theme }: any) {

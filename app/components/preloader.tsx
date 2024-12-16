@@ -32,13 +32,13 @@ const Preloader = () => {
       variants={slideUp}
       initial="initial"
       exit="exit"
-      className="bg-background h-screen flex items-center justify-center"
+      className="bg-primary h-screen flex items-center justify-center"
     >
       <motion.h1
         variants={loader}
         initial="initial"
         animate="animate"
-        className="text-foreground text-3xl font-bold"
+        className="text-secondary text-3xl font-bold"
       >
         {words[index]}
       </motion.h1>

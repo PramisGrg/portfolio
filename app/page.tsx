@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Preloader from "./components/preloader";
 import { AnimatePresence } from "framer-motion";
 import HeroSection from "./components/hero-section/page";
-import Project from "./components/project/page";
+import { TabsDemo } from "./components/project/page";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -20,10 +20,10 @@ export default function Home() {
         {isLoading ? (
           <Preloader key="preloader" />
         ) : (
-          <>
+          <div>
             <HeroSection />
-            <Project />
-          </>
+            <TabsDemo />
+          </div>
         )}
       </AnimatePresence>
     </div>

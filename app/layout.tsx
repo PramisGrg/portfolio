@@ -29,6 +29,11 @@ const neueMontreal = localfont({
       weight: "400",
       style: "italic",
     },
+    {
+      path: "../public/fonts/NeueMontreal-Light.otf",
+      weight: "200",
+      style: "light",
+    },
   ],
   variable: "--font-neueMontreal",
 });
