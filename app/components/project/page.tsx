@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { Tabs } from "@/app/ui/tabs";
 
-export function TabsDemo() {
+export function Project() {
   const tabs = [
     {
       title: "Sahaj Yatra",
