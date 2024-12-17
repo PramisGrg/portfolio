@@ -4,6 +4,7 @@ import React, { useRef } from "react";
 import profilePic from "@/public/profile-pic.jpeg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import RippleButton from "@/app/ui/button";
+import Downfooter from "./down-footer/page";
 
 const Footer = () => {
   const container = useRef(null);
@@ -38,7 +39,7 @@ const Footer = () => {
           style={{ x }}
           className="flex items-center justify-center relative"
         >
-          <button className="w-60 h-60 absolute bg-[#455CE9] overflow-hidden text-white rounded-full flex items-center justify-center cursor-pointer z-10 realtive right-0">
+          <button className="w-60 h-60 absolute overflow-hidden bg-[#455CE9] text-white rounded-full flex items-center justify-center cursor-pointer z-10 realtive right-0">
             <p className="text-xl font-light">Get in touch</p>
           </button>
         </motion.div>
@@ -50,42 +51,7 @@ const Footer = () => {
           </span>
         </div>
       </div>
-      <div className="flex p-6 justify-between">
-        <div className="flex flex-col space-y-2">
-          <span className="text-center text-gray-500">From</span>
-          <span>made with 🤍 in Next </span>
-        </div>
-        <div className="flex flex-col space-y-2">
-          <span className="text-center  text-gray-500">Socials</span>
-          <div className="space-x-4">
-            <a
-              href="https://www.instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              Instagram
-            </a>
-
-            <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              Github
-            </a>
-            <a
-              href=""
-              target="_blank"
-              rel="noopener noreferrer"
-              className="hover:underline"
-            >
-              LinkedIn
-            </a>
-          </div>
-        </div>
-      </div>
+      <Downfooter />
     </motion.section>
   );
 };

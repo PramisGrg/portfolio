@@ -1,10 +1,11 @@
 "use client";
 import { useEffect, useState } from "react";
-import Preloader from "./components/preloader";
+import Preloader from "../components/preloader";
 import { AnimatePresence } from "framer-motion";
-import HeroSection from "./components/hero-section/page";
-import { Project } from "./components/project/page";
-import Footer from "./components/footer/page";
+import HeroSection from "../components/hero-section/page";
+import Project from "../components/work/page";
+import Footer from "../components/footer/page";
+import Sliding from "../components/sliding/page";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -12,21 +13,22 @@ export default function Home() {
   useEffect(() => {
     setTimeout(() => {
       setIsLoading(false);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     }, 2000);
   }, []);
 
   return (
     <div>
       <AnimatePresence mode="wait">
-        {isLoading ? (
-          <Preloader key="preloader" />
-        ) : (
-          <div>
-            <HeroSection />
-            <Project />
-            <Footer />
-          </div>
-        )}
+        <AnimatePresence mode="wait">
+          {isLoading && <Preloader />}
+        </AnimatePresence>
+        <div>
+          <HeroSection />
+          <Project />
+          <Sliding />
+          <Footer />
+        </div>
       </AnimatePresence>
     </div>
   );

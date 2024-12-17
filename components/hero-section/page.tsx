@@ -88,7 +88,7 @@ const HeroSection = () => {
         <p className="m-0 mb-[10px]">Hi, I am Pramis Gurung</p>
         <p>Engineer and software developer</p>
       </div>
-      <div className="absolute top-[35%] flex gap-4 left-0 text-xl bg-primary text-secondary p-4 rounded-r-full">
+      <div className="absolute justify-between top-[35%] w-56 flex gap-4 left-0 text-xl bg-primary text-secondary p-4 rounded-r-full">
         <section>
           <p>Located </p>
           <p>in Nepal</p>

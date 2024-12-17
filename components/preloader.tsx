@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { slideUp, loader } from "../animation/animate";
+import { slideUp, loader } from "../app/animation/animate";
 import { motion } from "framer-motion";
 
 const Preloader = () => {
