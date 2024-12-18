@@ -21,9 +21,9 @@ export default function Home() {
     <div>
       <AnimatePresence mode="wait">
         <AnimatePresence mode="wait">
-          {isLoading && <Preloader />}
+          {isLoading && <Preloader key="preloader" />}
         </AnimatePresence>
-        <div>
+        <div key="main-content">
           <HeroSection />
           <Project />
           <Sliding />

@@ -21,34 +21,39 @@ const HeroSection = () => {
   const firstText = useRef(null);
   const secondText = useRef(null);
   const slider = useRef(null);
-  let xPercent = 0;
-  let direction = -1;
+  const direction = useRef(-1); // Use useRef for direction
+  const xPercent = useRef(0); // Use useRef for xPercent
 
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
+
+    // Initialize ScrollTrigger
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
         scrub: 0.25,
         start: 0,
         end: window.innerHeight,
-        onUpdate: (e) => (direction = e.direction * -1),
+        onUpdate: (e) => (direction.current = e.direction * -1), // Update direction using useRef
       },
       x: "-500px",
     });
-    requestAnimationFrame(animate);
+
+    // Start animation loop
+    const animationFrame = requestAnimationFrame(animate);
+    return () => cancelAnimationFrame(animationFrame); // Clean up on unmount
   }, []);
 
   const animate = () => {
-    if (xPercent < -100) {
-      xPercent = 0;
-    } else if (xPercent > 0) {
-      xPercent = -100;
+    if (xPercent.current < -100) {
+      xPercent.current = 0;
+    } else if (xPercent.current > 0) {
+      xPercent.current = -100;
     }
-    gsap.set(firstText.current, { xPercent: xPercent });
-    gsap.set(secondText.current, { xPercent: xPercent });
+    gsap.set(firstText.current, { xPercent: xPercent.current });
+    gsap.set(secondText.current, { xPercent: xPercent.current });
+    xPercent.current += 0.08 * direction.current; // Use direction.current
     requestAnimationFrame(animate);
-    xPercent += 0.08 * direction;
   };
 
   return (

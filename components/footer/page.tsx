@@ -39,7 +39,12 @@ const Footer = () => {
           style={{ x }}
           className="flex items-center justify-center relative"
         >
-          <button className="w-60 h-60 absolute overflow-hidden bg-[#455CE9] text-white rounded-full flex items-center justify-center cursor-pointer z-10 realtive right-0">
+          <button
+            onClick={() => {
+              console.log("I am clicked");
+            }}
+            className="w-60 h-60 absolute overflow-hidden bg-[#455CE9] text-white rounded-full flex items-center justify-center cursor-pointer z-10 realtive right-0"
+          >
             <p className="text-xl font-light">Get in touch</p>
           </button>
         </motion.div>

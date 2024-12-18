@@ -1,11 +1,16 @@
+"use client";
 import Downfooter from "@/components/footer/down-footer/page";
 import Navbar from "@/components/navbar/navbar";
 import Image from "next/image";
 import ProfileImage from "@/public/profile-pic.jpeg";
-import React from "react";
+import React, { useState } from "react";
 import RippleButtonRounded from "@/app/ui/rounded-ripple-buton";
 
 const Contact = () => {
+  const [changeName, setChangeName] = useState(false);
+  const [changeEmail, setChangeEmail] = useState(false);
+  const [changeMessage, setChangeMessage] = useState(false);
+
   return (
     <div className="bg-primary text-white min-h-screen">
       <Navbar />
@@ -19,30 +24,62 @@ const Contact = () => {
             <div className="flex flex-col border-y border-gray-500 py-6">
               <label className="space-x-4">
                 <span className="text-xl text-gray-500">01</span>
-                <span> What is your name ?</span>
+                <span
+                  className={`${changeName ? "text-gray-500" : "text-white"}`}
+                >
+                  What is your name ?
+                </span>
               </label>
               <input
-                className="bg-primary p-4 focus:outline-none text-gray-500"
+                onChange={(event) => {
+                  const value = event.target.value.trim();
+                  setChangeName(value !== "");
+                }}
+                className={`bg-primary p-4 focus:outline-none ${
+                  changeName ? "text-white" : "text-gray-500"
+                }`}
                 placeholder="John Doe"
               />
             </div>
             <div className="flex flex-col py-6">
               <label className="space-x-4">
                 <span className="text-xl text-gray-500">02</span>
-                <span> What is your email ?</span>
+                <span
+                  className={`${changeEmail ? "text-gray-500" : "text-white"}`}
+                >
+                  What is your email ?
+                </span>
               </label>
               <input
-                className="bg-primary p-4 focus:outline-none text-gray-500"
+                onChange={(event) => {
+                  const value = event.target.value.trim();
+                  setChangeEmail(value !== "");
+                }}
+                className={`bg-primary p-4 focus:outline-none ${
+                  changeEmail ? "text-white" : "text-gray-500"
+                }`}
                 placeholder="john@doe.com"
               />
             </div>
             <div className="flex flex-col border-y border-gray-500 py-6">
               <label className="space-x-4">
                 <span className="text-xl text-gray-500">03</span>
-                <span>Your message </span>
+                <span
+                  className={`${
+                    changeMessage ? "text-gray-500" : "text-white"
+                  }`}
+                >
+                  Your message{" "}
+                </span>
               </label>
               <textarea
-                className="bg-primary p-4 focus:outline-none text-gray-500"
+                onChange={(event) => {
+                  const value = event.target.value.trim();
+                  setChangeMessage(value !== "");
+                }}
+                className={`bg-primary p-4 focus:outline-none ${
+                  changeMessage ? "text-white" : "text-gray-500"
+                }`}
                 placeholder="Hello, can we start a project together ..."
               />
             </div>

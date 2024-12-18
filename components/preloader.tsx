@@ -25,7 +25,7 @@ const Preloader = () => {
       },
       index == 0 ? 1000 : 150
     );
-  }, [index]);
+  }, [index, words.length]);
 
   return (
     <motion.div
