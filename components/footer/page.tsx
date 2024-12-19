@@ -5,9 +5,11 @@ import profilePic from "@/public/profile-pic.jpeg";
 import { motion, useScroll, useTransform } from "framer-motion";
 import RippleButton from "@/app/ui/button";
 import Downfooter from "./down-footer/page";
+import { useRouter } from "next/navigation";
 
 const Footer = () => {
   const container = useRef(null);
+  const router = useRouter();
   const { scrollYProgress } = useScroll({
     target: container,
     offset: ["start end", "end end"],
@@ -21,7 +23,7 @@ const Footer = () => {
       style={{ y }}
       className="bg-primary text-white"
     >
-      <div className="max-w-[80vw] py-[4rem] mx-auto">
+      <div className="max-w-[90vw] py-[4rem] mx-auto">
         <div className="flex text-6xl space-y-4 flex-col">
           <div className="flex space-x-6">
             <Image
@@ -41,7 +43,7 @@ const Footer = () => {
         >
           <button
             onClick={() => {
-              console.log("I am clicked");
+              router.push("/contact");
             }}
             className="w-60 h-60 absolute overflow-hidden bg-[#455CE9] text-white rounded-full flex items-center justify-center cursor-pointer z-10 realtive right-0"
           >
@@ -51,7 +53,11 @@ const Footer = () => {
         <div className="mt-60 text-2xl space-y-6">
           <p>Shoot me email at</p>
           <span className="flex space-x-4">
-            <RippleButton>gurungpramis361@gmail.com</RippleButton>
+            <RippleButton>
+              <a href="mailto:gurungpramis361@gmail.com">
+                gurungpramis361@gmail.com
+              </a>
+            </RippleButton>
             <RippleButton>+977 9866060075</RippleButton>
           </span>
         </div>

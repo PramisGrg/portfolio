@@ -23,3 +23,13 @@ export const loader = {
     },
   },
 };
+
+export const SlideP = {
+  initial: {
+    y: "90vh",
+  },
+  animate: {
+    y: "0%",
+    transition: { duration: 0.5 },
+  },
+};
