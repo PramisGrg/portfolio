@@ -38,7 +38,7 @@ export default function Project() {
   ];
 
   return (
-    <div className="h-[20rem] md:h-[40rem] [perspective:1000px] relative b flex flex-col max-w-5xl mx-auto w-full  items-start justify-start my-32">
+    <div className="md:h-[50rem] [perspective:1000px] relative b flex flex-col max-w-[90vw] mx-auto w-full items-start justify-start md:my-32 my-20 h-[30rem]">
       <h1 className="text-5xl font-neueMontreal font-thin mb-4">Works</h1>
       <Tabs tabs={tabs} />
     </div>
@@ -52,7 +52,7 @@ const DummyContent = () => {
       alt="dummy image"
       width="1000"
       height="1000"
-      className="object-cover object-left-top h-[60%]  md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
+      className="object-cover object-left-top h-[60%] md:h-[90%] absolute -bottom-10 inset-x-0 w-[90%] rounded-xl mx-auto"
     />
   );
 };

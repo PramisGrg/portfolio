@@ -27,21 +27,19 @@ const HeroSection = () => {
   useLayoutEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initialize ScrollTrigger
     gsap.to(slider.current, {
       scrollTrigger: {
         trigger: document.documentElement,
         scrub: 0.25,
         start: 0,
         end: window.innerHeight,
-        onUpdate: (e) => (direction.current = e.direction * -1), // Update direction using useRef
+        onUpdate: (e) => (direction.current = e.direction * -1),
       },
       x: "-500px",
     });
 
-    // Start animation loop
     const animationFrame = requestAnimationFrame(animate);
-    return () => cancelAnimationFrame(animationFrame); // Clean up on unmount
+    return () => cancelAnimationFrame(animationFrame);
   }, []);
 
   const animate = () => {
@@ -87,13 +85,14 @@ const HeroSection = () => {
       <div
         data-scroll
         data-scroll-speed={0.1}
-        className="absolute top-[35%] left-[65%] text-2xl"
+        className="absolute top-[35%] md:left-[65%] left-[10%] text-2xl"
       >
         <MoveDownRight className="w-5 h-5 mb-[10px] font-thin" />
         <p className="m-0 mb-[10px]">Hi, I am Pramis Gurung</p>
         <p>Engineer and software developer</p>
       </div>
-      <div className="absolute justify-between top-[35%] w-56 flex gap-4 left-0 text-xl bg-primary text-secondary p-4 rounded-r-full">
+
+      <div className="hidden md:absolute justify-between top-[35%] w-56 gap-4 md:flex left-0 text-xl bg-primary text-secondary p-4 rounded-r-full">
         <section>
           <p>Located </p>
           <p>in Nepal</p>

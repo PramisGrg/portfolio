@@ -14,9 +14,9 @@ const Contact = () => {
   return (
     <div className="bg-primary text-white min-h-screen">
       <Navbar />
-      <div className="max-w-[900px] mx-auto grid grid-cols-[80%_20%] gap-20 py-20">
+      <div className="max-w-[90vw] mx-auto grid md:grid-cols-[70%_30%] gap-20 py-20">
         <div className="">
-          <div className="flex flex-col text-[5rem]">
+          <div className="flex max-w-[90vw] mx-auto flex-col text-[5rem]">
             <span>Lets start a </span>
             <span>Project Together</span>
           </div>
@@ -84,9 +84,12 @@ const Contact = () => {
               />
             </div>
           </div>
+          <div className="max-w-[40vw] mx-auto flex justify-end">
+            <RippleButtonRounded>Send a email</RippleButtonRounded>
+          </div>
         </div>
 
-        <div className="flex flex-col space-y-10 py-20">
+        <div className="md:flex hidden flex-col space-y-10 py-20">
           <Image
             width={1000}
             height={1000}
@@ -111,11 +114,8 @@ const Contact = () => {
             </div>
           </div>
         </div>
-
-        <div className="flex justify-end">
-          <RippleButtonRounded>Send a email</RippleButtonRounded>
-        </div>
       </div>
+
       <Downfooter />
     </div>
   );

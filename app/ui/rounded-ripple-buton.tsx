@@ -88,7 +88,7 @@ export default function RippleButtonRounded({
   return (
     <button
       ref={buttonRef}
-      className=" duration-[600ms] relative flex w-56 h-56 items-center border border-gray-800 justify-center overflow-hidden rounded-full bg-[#455CE9] p-[1.3rem] text-[1.2rem] text-white transition"
+      className=" duration-[600ms] relative flex w-40 h-40 items-center border border-gray-800 justify-center overflow-hidden rounded-full bg-[#455CE9] p-[1.3rem] text-[1.2rem] text-white transition"
       onMouseEnter={(e) => {
         if (e.target === e.currentTarget) {
           createRipple(e);

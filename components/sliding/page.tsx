@@ -54,7 +54,7 @@ export default function Sliding() {
   return (
     <div
       ref={container}
-      className="flex flex-col gap-[3vw] relative my-60 bg-white z-10"
+      className="flex flex-col gap-[3vw] relative md:mt-60 mt-48 bg-white z-10 overflow-hidden"
     >
       <motion.div
         style={{ x: x1 }}
@@ -98,9 +98,6 @@ export default function Sliding() {
           </div>
         ))}
       </motion.div>
-      {/* <motion.div style={{ height }} className="relative mt-[100px] bg-red-500">
-        <div className="absolute h-[1550%] w-[120%] -left-[10%] rounded-b-[50%] bg-white shadow-[0px_60px_50px_rgba(0,0,0,0.748)] z-10"></div>
-      </motion.div> */}
     </div>
   );
 }

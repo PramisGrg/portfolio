@@ -45,14 +45,14 @@ const Footer = () => {
             onClick={() => {
               router.push("/contact");
             }}
-            className="w-60 h-60 absolute overflow-hidden bg-[#455CE9] text-white rounded-full flex items-center justify-center cursor-pointer z-10 realtive right-0"
+            className="md:w-60 md:h-60 w-40 h-40 absolute overflow-hidden bg-[#455CE9] text-white rounded-full flex items-center justify-center cursor-pointer z-10 realtive right-0"
           >
-            <p className="text-xl font-light">Get in touch</p>
+            <p className="md:text-xl text-base font-light">Get in touch</p>
           </button>
         </motion.div>
         <div className="mt-60 text-2xl space-y-6">
           <p>Shoot me email at</p>
-          <span className="flex space-x-4">
+          <span className="flex md:flex-row space-y-4 flex-col space-x-4">
             <RippleButton>
               <a href="mailto:gurungpramis361@gmail.com">
                 gurungpramis361@gmail.com
