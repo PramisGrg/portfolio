@@ -2,42 +2,56 @@
 import { useRef } from "react";
 import { useScroll, useTransform, motion } from "framer-motion";
 import Image from "next/image";
+import movie1 from "@/public/slider-image/movie1.png";
+import movie2 from "@/public/slider-image/movie2.png";
+// import movie3 from "@/public/slider-image/movie3.png";
+// import movie4 from "@/public/slider-image/movie4.png";
+// import abc1 from "@/public/slider-image/abc1.png";
+import abc2 from "@/public/slider-image/abc2.png";
+// import hotel1 from "@/public/slider-image/hotel1.png";
+import yatra1 from "@/public/slider-image/yatra1.png";
+import yatra2 from "@/public/slider-image/yatra2.png";
+import yatra3 from "@/public/slider-image/yatra3.png";
+// import yatra4 from "@/public/slider-image/yatra4.png";
+import yatra5 from "@/public/slider-image/yatra5.png";
+import yatra6 from "@/public/slider-image/yatra6.png";
+// import yatra7 from "@/public/slider-image/yatra7.png";
 
 const slider1 = [
   {
     color: "#e3e5e7",
-    src: "c2.jpg",
+    src: movie1,
   },
   {
     color: "#d6d7dc",
-    src: "decimal.jpg",
+    src: movie2,
   },
   {
     color: "#e3e3e3",
-    src: "funny.jpg",
+    src: yatra1,
   },
   {
     color: "#21242b",
-    src: "google.jpg",
+    src: yatra3,
   },
 ];
 
 const slider2 = [
   {
     color: "#d4e3ec",
-    src: "maven.jpg",
+    src: yatra2,
   },
   {
     color: "#e5e0e1",
-    src: "panda.jpg",
+    src: abc2,
   },
   {
     color: "#d7d4cf",
-    src: "powell.jpg",
+    src: yatra5,
   },
   {
     color: "#e1dad6",
-    src: "wix.jpg",
+    src: yatra6,
   },
 ];
 
@@ -70,7 +84,7 @@ export default function Sliding() {
               <Image
                 fill={true}
                 alt="image"
-                src={`/images/${project.src}`}
+                src={project.src}
                 className="object-cover"
               />
             </div>
@@ -91,7 +105,7 @@ export default function Sliding() {
               <Image
                 fill={true}
                 alt="image"
-                src={`/images/${project.src}`}
+                src={project.src}
                 className="object-cover"
               />
             </div>
