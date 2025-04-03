@@ -5,11 +5,16 @@ import Image from "next/image";
 import ProfileImage from "@/public/profile-pic.jpeg";
 import React, { useState } from "react";
 import RippleButtonRounded from "@/app/ui/rounded-ripple-buton";
+import { toast } from "sonner";
 
 const Contact = () => {
   const [changeName, setChangeName] = useState(false);
   const [changeEmail, setChangeEmail] = useState(false);
   const [changeMessage, setChangeMessage] = useState(false);
+
+  const handleClick = () => {
+    toast("Mail sent successfully");
+  };
 
   return (
     <div className="bg-primary text-white min-h-screen">
@@ -85,7 +90,9 @@ const Contact = () => {
             </div>
           </div>
           <div className="max-w-[40vw] mx-auto flex justify-end">
-            <RippleButtonRounded>Send a email</RippleButtonRounded>
+            <RippleButtonRounded onClick={handleClick}>
+              Send a email
+            </RippleButtonRounded>
           </div>
         </div>
 

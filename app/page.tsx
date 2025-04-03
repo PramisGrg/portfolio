@@ -6,6 +6,7 @@ import HeroSection from "../components/hero-section/page";
 import Project from "../components/work/page";
 import Footer from "../components/footer/page";
 import Sliding from "../components/sliding/page";
+import { Toaster } from "sonner";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -19,6 +20,7 @@ export default function Home() {
 
   return (
     <div>
+      <Toaster />
       <AnimatePresence mode="wait">
         <AnimatePresence mode="wait">
           {isLoading && <Preloader key="preloader" />}
